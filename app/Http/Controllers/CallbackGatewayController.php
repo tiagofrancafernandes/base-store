@@ -9,7 +9,8 @@ class CallbackGatewayController extends Controller
 {
     function indexCallback(Request $request)
     {
-        return response()->json(['ok get'], 200);
+        $logs = CallbackPicPay::all();
+        return response()->json($logs, 200);
     }
 
     function storeCallback(Request $request)
