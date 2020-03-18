@@ -9,7 +9,7 @@ class CallbackGatewayController extends Controller
 {
     function indexCallback(Request $request)
     {
-        $logs = CallbackPicPay::all();
+        $logs = CallbackPicPay::paginate(50);
         return response()->json($logs, 200);
     }
 
