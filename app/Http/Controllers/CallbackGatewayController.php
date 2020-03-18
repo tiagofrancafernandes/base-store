@@ -29,4 +29,16 @@ class CallbackGatewayController extends Controller
         */
         return response()->json($data, 200);
     }
+
+    function deleteCallBackLog($id)
+    {
+        $cb_log = CallbackPicPay::find($id);
+
+        $status = false;
+
+        if($cb_log)
+            $status = ($cb_log->delete());
+
+        return response()->json(['success' => $status], 200);
+    }
 }

@@ -21,3 +21,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::get('/callback', 'CallbackGatewayController@indexCallback');
 Route::post('/callback', 'CallbackGatewayController@storeCallback');
+Route::delete('/callback/{id}', 'CallbackGatewayController@deleteCallBackLog');
